@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+.hidden {
+  display: none;
+  
+
+}
+body {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-size: 14px;
+  background: #f6fffd;
+
+  text-align: center;
+}
+
+.wrapper {
+  width: 250px;
+  height: 350px;
+  margin: 60px auto;
+   perspective: 600px; 
+  text-align: left;
+  
+}
+
+.rec-prism {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+   transition: transform 0.5s ease-in;
+}
+
+.face {
+ position: absolute; 
+ width:100%;
+ height:100%;
+ 
+  /* width: 300px;
+  height: 365px; */
+  padding: 20px;
+  background: white;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 3px;
+
+  
+}
+
+ img{
+  max-width: 100%; /* Görselin ebeveyn elementin genişliğini aşmamasını sağlamak için */
+    height: auto; /* Görselin oranlarını koruyarak yüksekliği ayarlamak için */
+
+}
+
+.face .content {
+  color: #666;
+  /* margin-top: 15px;
+  color: #666666;*/
+  font-size:12px; 
+  
+  
+}
+
+.face h2 {
+  font-size: 1em;
+  color: red;
+}
+
+.face .content .field-wrapper {
+  /* margin-top: 30px; */
+  margin-top: 4px;
+  position: relative;
+}
+
+.face .content .field-wrapper label {
+  /* margin-top: 10px; */
+  position: absolute;
+  pointer-events: none; 
+  font-size: 0.85em;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all ease-in 0.25s;
+  color: #999999;
+}
+
+.face .content .field-wrapper input[type=text],
+.face .content .field-wrapper input[type=password],
+.face .content .field-wrapper button[type=submit],
+.face .content .field-wrapper textarea,
+.face .content .field-wrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  border: none;
+  background: transparent;
+  line-height: 2em;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  color: #666;
+}
+
+.face .content .field-wrapper input[type=text]:focus,
+.face .content .field-wrapper input[type=password]:focus,
+.face .content .field-wrapper button[type=submit]:focus,
+.face .content .field-wrapper textarea:focus,
+.face .content .field-wrapper select:focus {
+  outline: none;
+}
+
+.face .content .field-wrapper input[type=text]::-webkit-input-placeholder,
+.face .content .field-wrapper input[type=password]::-webkit-input-placeholder,
+.face .content .field-wrapper textarea::-webkit-input-placeholder,
+.face .content .field-wrapper select::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.face .content .field-wrapper input[type=text]::-moz-placeholder,
+.face .content .field-wrapper input[type=password]::-moz-placeholder,
+.face .content .field-wrapper textarea::-moz-placeholder,
+.face .content .field-wrapper select::-moz-placeholder {
+  opacity: 0;
+}
+
+.face .content .field-wrapper input[type=text]:-ms-input-placeholder,
+.face .content .field-wrapper input[type=password]:-ms-input-placeholder,
+.face .content .field-wrapper textarea:-ms-input-placeholder,
+.face .content .field-wrapper select:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.face .content .field-wrapper input[type=text]:-moz-placeholder,
+.face .content .field-wrapper input[type=password]:-moz-placeholder,
+.face .content .field-wrapper textarea:-moz-placeholder,
+.face .content .field-wrapper select:-moz-placeholder {
+  opacity: 0;
+}
+
+.face .content .field-wrapper input[type=text]:not(:-moz-placeholder-shown) + label,
+.face .content .field-wrapper input[type=password]:not(:-moz-placeholder-shown) + label,
+.face .content .field-wrapper textarea:not(:-moz-placeholder-shown) + label,
+.face .content .field-wrapper select:not(:-moz-placeholder-shown) + label {
+  top: -35%;
+  color: #42509e;
+}
+
+.face .content .field-wrapper input[type=text]:focus + label,
+.face .content .field-wrapper input[type=text]:not(:placeholder-shown) + label,
+.face .content .field-wrapper input[type=password]:focus + label,
+.face .content .field-wrapper input[type=password]:not(:placeholder-shown) + label,
+.face .content .field-wrapper textarea:focus + label,
+.face .content .field-wrapper textarea:not(:placeholder-shown) + label,
+.face .content .field-wrapper select:focus + label,
+.face .content .field-wrapper select:not(:placeholder-shown) + label {
+  top: -35%;
+  color: #42509e;
+}
+
+.face .content .field-wrapper .invalid-feedback{
+  margin-bottom:0.5px;
+}
+
+.face .content .field-wrapper button[type=submit] {
+  margin-top: 15px;
+  cursor: pointer;
+  margin-left:55px;
+  width: 50%;
+  background: red;
+  line-height: 2em;
+  color: #fff;
+  border: 1px solid red;
+  border-radius: 20px;
+  /* padding: 5px; */
+}
+
+.face .content .field-wrapper button[type=submit]:hover {
+  opacity: 0.9;
+}
+
+.face .content .field-wrapper button[type=submit]:active {
+  transform: scale(0.96);
+}
+
+.face .content .field-wrapper textarea {
+  resize: none;
+  line-height: 1em;
+}
+
+.face .content .field-wrapper textarea:not(:-moz-placeholder-shown) + label,
+.face .content .field-wrapper select:not(:-moz-placeholder-shown) + label {
+  top: -25%;
+}
+
+.face .content .field-wrapper textarea:focus + label,
+.face .content .field-wrapper textarea:not(:placeholder-shown) + label,
+.face .content .field-wrapper select:focus + label,
+.face .content .field-wrapper select:not(:placeholder-shown) + label {
+  top: -25%;
+}
+
+.face .thank-you-msg {
+  position: absolute;
+  /* bottom: 1px; */
+  left:50%;
+  width: 200px;
+  height: 130px;
+  /* text-align: center; */
+  font-size: 1em;
+  color: white;
+  top: 110%;
+  transform: translate(-50%, -50%);
+  font-family: "Bebas Neue", sans-serif;
+}
+
+
+
+.face .thank-you-msg:after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 25px;
+  border: 10px solid red;
+  border-right: 0;
+  border-top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  animation: success ease-in 0.15s forwards;
+  animation-delay: 2.5s;
+}
+
+.face-front {
+  box-shadow: 0 0 30px 5px #706f6f91;
+  border-radius: 3px ;
+  transform: rotateY(0deg) translateZ(125px); 
+
+}
+
+ /* .field-wrapper .row .error{
+  margin-top:1%;
+} */
+.face-top {
+  height: 250px;
+  transform: rotateX(90deg) translateZ(125px);
+}
+
+.face-back {
+  transform: rotateY(180deg) translateZ(125px);
+  
+}
+
+.face-right {
+  transform: rotateY(90deg) translateZ(125px);
+}
+
+.face-left {
+  transform: rotateY(-90deg) translateZ(125px);
+}
+
+.face-bottom {
+  height: 250px;
+  transform: rotateX(-90deg) translateZ(225px);
+}
+/* .face.face-bottom {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden; 
+} */
+
+#randomImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.nav {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-block;
+  list-style-type: none;
+  font-size: 1em;
+  margin: 0 10px;
+  color: #42509e;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav li:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  border-bottom: 1px solid #42509e;
+  transition: all ease-in 0.25s;
+}
+
+.nav li:hover:after {
+  width: 100%;
+}
+
+.psw, .signup, .signin {
+  display: block;
+  margin: 20px 0;
+  font-size: 0.75em;
+  text-align: center;
+  color: #42509e;
+  cursor: pointer;
+}
+
+small {
+  font-size: 0.7em;
+}
+
+.face .content .field-wrapper .invalid-feedback {
+  margin-top:1px;
+  font-size: .700em;
+}
+
+.hidden { display: none; }
